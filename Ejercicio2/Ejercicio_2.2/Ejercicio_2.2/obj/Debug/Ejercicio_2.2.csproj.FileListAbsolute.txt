@@ -1,0 +1,7 @@
+C:\Users\Panella\source\repos\Ejercicio_2.2\Ejercicio_2.2\bin\Debug\Ejercicio_2.2.exe.config
+C:\Users\Panella\source\repos\Ejercicio_2.2\Ejercicio_2.2\bin\Debug\Ejercicio_2.2.exe
+C:\Users\Panella\source\repos\Ejercicio_2.2\Ejercicio_2.2\bin\Debug\Ejercicio_2.2.pdb
+C:\Users\Panella\source\repos\Ejercicio_2.2\Ejercicio_2.2\obj\Debug\Ejercicio_2.2.csprojAssemblyReference.cache
+C:\Users\Panella\source\repos\Ejercicio_2.2\Ejercicio_2.2\obj\Debug\Ejercicio_2.2.csproj.CoreCompileInputs.cache
+C:\Users\Panella\source\repos\Ejercicio_2.2\Ejercicio_2.2\obj\Debug\Ejercicio_2.2.exe
+C:\Users\Panella\source\repos\Ejercicio_2.2\Ejercicio_2.2\obj\Debug\Ejercicio_2.2.pdb
