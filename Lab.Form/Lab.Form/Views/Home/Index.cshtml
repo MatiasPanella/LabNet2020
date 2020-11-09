@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<form>
+    <div class="info_personal" style=" width:300px;">
+        <h4>Informacion Personal:</h4>
+        <ul>
+            <li>
+                <label>Nombre:</label>
+                <br />
+                <input type="text" id="name" />
+            </li>
+
+            <br />
+
+            <li>
+                <label>Apellido:</label>
+                <br />
+                <input type="text" id="surename" />
+            <li />
+
+            <br />
+
+            <li>
+                <style type="text/css">
+                    #age {
+                        width: 35px;
+                    }
+                </style>
+                <label>Edad:</label>
+                <br />
+                <input type="text" id="age" />
+            <li />
+            <br />
+            <li>
+                <input type="radio" name="sex" value="masculino" />
+                <label>Masculino</label>
+                <br />
+                <input type="radio" name="sex" value="femenino" />
+                <label>Femenino</label>
+                <br />
+                <input type="radio" name="sex" value="otro" />
+                <label>Otro</label>
+            <li />
+        </ul>
+
+    </div>
+
+    <div class="info_add" style="width:300px;">
+        <h4>Informacion Adicional:</h4>
+        <label>Empresa:</label>
+        <br />
+        <input type="text" name="empresa" />
+    </div>
+    <br />
+
+    <button type="submit" onclick="submit()" id="btn-submit">Submit</button>
+</form>
