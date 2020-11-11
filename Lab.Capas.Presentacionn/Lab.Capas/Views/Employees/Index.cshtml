@@ -1,0 +1,40 @@
+﻿@model List<Lab.Demo.Entities.Employees>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Employees List</h2>
+<div>@Html.ActionLink("Insertar", "Insert", "Employees")</div>
+<br />
+<table class="table">
+    <tr>
+        <td>
+            ID
+        </td>
+        <td>
+             Name
+        </td>
+        <td>
+            Surname
+        </td>
+        <td>
+            Options
+        </td>
+    </tr>
+    @foreach (var emp in Model)
+    {
+        <tr>
+            <td>@emp.EmployeeID</td>
+            <td>@emp.FirstName</td>
+            <td>@emp.LastName</td>
+            <td>
+                @Html.ActionLink("Eliminar", "Delete", new { id = emp.EmployeeID }, new { onclick = "return confirm('Seguro que deseas eliminar el registro?')" })
+                -
+                @Html.ActionLink("Editar","Edit", new { id = emp.EmployeeID}, new { @class = "glyphicon glyphicon-pencil" })
+
+            </td>
+            
+            
+        </tr>
+    }
+</table>
