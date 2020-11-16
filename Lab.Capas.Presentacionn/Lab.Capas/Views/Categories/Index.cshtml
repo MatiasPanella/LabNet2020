@@ -1,0 +1,37 @@
+﻿@model List<Lab.Capas.Models.CategoriesView>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Categories List</h2>
+<div>@Html.ActionLink("Insertar", "Insert", "Categories")</div>
+<br />
+<table class="table">
+    <tr>
+       
+        <td>
+            <b>ID</b>
+        </td>
+        <td>
+            <b> Name</b>
+        </td>
+        <td>
+            <b>Description</b>
+        </td>
+        <td>
+           <b> Options</b>
+        </td>    
+    </tr>
+        @foreach (var cat in Model)
+        {
+        <tr>
+            <td>@cat.CategoryId</td>
+            <td>@cat.CategoryName</td>
+            <td>@cat.Description</td>
+            <td>
+            @Html.ActionLink("Eliminar","Delete", new { id = cat.CategoryId }, new { onclick = "return confirm('Seguro que deseas eliminar?')" })
+            @Html.ActionLink("Edit","Edit",new { id = cat.CategoryId}, new { @class = "glyphicon glyphicon-pencil" })
+            </td>
+        </tr>
+    }
+    </table>
