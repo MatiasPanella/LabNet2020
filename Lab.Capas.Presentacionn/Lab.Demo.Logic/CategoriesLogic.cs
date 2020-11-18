@@ -1,4 +1,5 @@
 ﻿using Lab.Demo.Entities;
+using Lab.Demo.ResourceAccess.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,29 +12,21 @@ namespace Lab.Demo.Logic
     {
         public void Delete(int id)
         {
-            Categories categoryToDelete = GetOne(id);
-            context.Categories.Remove(categoryToDelete);
-            context.SaveChanges();
+            CategoriesRepository categoriesRepository = new CategoriesRepository();
+            categoriesRepository.Delete(id);
         }
+
 
         public List<Categories> GetAll()
         {
-            List<Categories> result = new List<Categories>();
-            try 
-            { 
-                result =  context.Categories.ToList();
-            }
-            catch (Exception)
-            {
-                throw new Exception("Ocurrio un error al buscar las categorias");
-            }
-
-            return result;
+            
+            CategoriesRepository categoriesRepository = new CategoriesRepository();
+            return categoriesRepository.GetAllCategories();
         }
-
         public Categories GetOne(int id)
         {
-            return context.Categories.FirstOrDefault(c => c.CategoryID.Equals(id));
+            CategoriesLogic categories = new CategoriesLogic();
+            return categories.GetOne(id);
         }
 
         public Categories Insert(Categories entity)
@@ -50,10 +43,12 @@ namespace Lab.Demo.Logic
 
         public void Update(Categories entity)
         {
-            Categories categoryToEdit = GetOne(entity.CategoryID);
-            categoryToEdit.CategoryName = entity.CategoryName;
-            categoryToEdit.Description = entity.Description;
-            context.SaveChanges();
+            CategoriesRepository categoriesRepository = new CategoriesRepository();
+            categoriesRepository.PutCategory(entity);
+            //Categories categoryToEdit = GetOne(entity.CategoryID);
+            //categoryToEdit.CategoryName = entity.CategoryName;
+            //categoryToEdit.Description = entity.Description;
+            //context.SaveChanges();
         }
     }
 }

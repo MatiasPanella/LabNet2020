@@ -8,66 +8,51 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using MVCWebApi.Models;
+using Lab.Demo.Entities;
+using Lab.Demo.Logic;
 
 namespace MVCWebApi.Controllers
 {
     public class CategoriesController : ApiController
     {
-        private NorthwindBD db = new NorthwindBD();
 
         // GET: api/Categories
-        public IQueryable<Categories> GetCategories()
-        {
-            return db.Categories;
+        public List<Categories> GetAllCategories()
+        {   
+            CategoriesLogic categoriesLogic = new CategoriesLogic();
+            return categoriesLogic.GetAll();
         }
 
-        // GET: api/Categories/5
-        [ResponseType(typeof(Categories))]
-        public IHttpActionResult GetCategories(int id)
+        public void Delete (int id)
         {
-            Categories categories = db.Categories.Find(id);
-            if (categories == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(categories);
+            CategoriesLogic categoriesLogic = new CategoriesLogic();
+            categoriesLogic.Delete(id);
         }
+
+        //GET: api/Categories/5
+        public Categories GetOneCategory(int id)
+        {
+            CategoriesLogic categoriesLogic = new CategoriesLogic();
+            var category = categoriesLogic.GetOne(id);
+            return (category);
+        }
+
+
+
 
         // PUT: api/Categories/5
-        [ResponseType(typeof(void))]
         public IHttpActionResult PutCategories(int id, Categories categories)
-        {
+       {
             if (!ModelState.IsValid)
-            {
                 return BadRequest(ModelState);
-            }
 
             if (id != categories.CategoryID)
-            {
                 return BadRequest();
-            }
 
-            db.Entry(categories).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CategoriesExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return StatusCode(HttpStatusCode.NoContent);
+            CategoriesLogic categoriesLogic = new CategoriesLogic();
+            categoriesLogic.Update(categories);
+            return Ok();
+            //return StatusCode(HttpStatusCode.NoContent);
         }
 
         // POST: api/Categories
@@ -78,41 +63,41 @@ namespace MVCWebApi.Controllers
             {
                 return BadRequest(ModelState);
             }
-
-            db.Categories.Add(categories);
-            db.SaveChanges();
+            CategoriesLogic categoriesLogic = new CategoriesLogic();
+            categoriesLogic.Insert(categories);
+            
 
             return CreatedAtRoute("DefaultApi", new { id = categories.CategoryID }, categories);
         }
 
         // DELETE: api/Categories/5
-        [ResponseType(typeof(Categories))]
-        public IHttpActionResult DeleteCategories(int id)
-        {
-            Categories categories = db.Categories.Find(id);
-            if (categories == null)
-            {
-                return NotFound();
-            }
+        //[ResponseType(typeof(Categories))]
+        //public IHttpActionResult DeleteCategories(int id)
+        //{
+        //    Categories categories = db.Categories.Find(id);
+        //    if (categories == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            db.Categories.Remove(categories);
-            db.SaveChanges();
+        //    db.Categories.Remove(categories);
+        //    db.SaveChanges();
 
-            return Ok(categories);
-        }
+        //    return Ok(categories);
+        //}
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        db.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
 
-        private bool CategoriesExists(int id)
-        {
-            return db.Categories.Count(e => e.CategoryID == id) > 0;
-        }
+        //private bool CategoriesExists(int id)
+        //{
+        //    return db.Categories.Count(e => e.CategoryID == id) > 0;
+        //}
     }
 }

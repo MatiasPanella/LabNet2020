@@ -270,6 +270,10 @@
       <Project>{163a7ed6-b9ca-4915-9e4d-7a8c1353f93e}</Project>
       <Name>Lab.Demo.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Lab.Demo.Logic\Lab.Demo.Logic.csproj">
+      <Project>{50E57936-604F-4525-AD11-4EEB3D31D653}</Project>
+      <Name>Lab.Demo.Logic</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -25,7 +25,7 @@ namespace Lab.Capas.Controllers
                 return View(new CategoriesView());
             else
             {
-                HttpResponseMessage response = GlobalVariables.WebApiClient.GetAsync("CategoriesWebApi/" + id.ToString()).Result;
+                HttpResponseMessage response = GlobalVariables.WebApiClient.GetAsync("Categories/" + id.ToString()).Result;
                 return View(response.Content.ReadAsAsync<CategoriesView>().Result);
             }
            
@@ -36,11 +36,11 @@ namespace Lab.Capas.Controllers
         {
             if(categories.CategoryId == 0)
             {
-                HttpResponseMessage response = GlobalVariables.WebApiClient.PostAsJsonAsync("CategoriesWebApi", categories).Result;
+                HttpResponseMessage response = GlobalVariables.WebApiClient.PostAsJsonAsync("Categories", categories).Result;
                 TempData["SuccessMessage"] = "Category created";
             } else
             {
-                HttpResponseMessage response = GlobalVariables.WebApiClient.PutAsJsonAsync("CategoriesWebApi/"+ categories.CategoryId, categories).Result;
+                HttpResponseMessage response = GlobalVariables.WebApiClient.PutAsJsonAsync("Categories/"+ categories.CategoryId, categories).Result;
                 TempData["SuccessMessage"] = "Category edited";
             }
             
@@ -49,7 +49,7 @@ namespace Lab.Capas.Controllers
 
         public ActionResult Delete(int id)
         {
-            HttpResponseMessage reponse = GlobalVariables.WebApiClient.DeleteAsync("CategoriesWebApi/" + id.ToString()).Result;
+            HttpResponseMessage reponse = GlobalVariables.WebApiClient.DeleteAsync("Categories/" + id.ToString()).Result;
             TempData["SuccessMessage"] = "Deleted successfully";
             return RedirectToAction("Index");
         }

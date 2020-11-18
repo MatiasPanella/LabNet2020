@@ -36,3 +36,17 @@ C:\Users\54247\Desktop\repo\Lab.Capas.Presentacionn\Lab.Demo.Entities\obj\Debug\
 C:\Users\54247\Desktop\repo\Lab.Capas.Presentacionn\Lab.Demo.Entities\obj\Debug\Lab.Demo.Entities.pdb
 C:\Users\54247\Desktop\repo\Lab.Capas.Presentacionn\Lab.Demo.Entities\bin\Debug\Newtonsoft.Json.dll
 C:\Users\54247\Desktop\repo\Lab.Capas.Presentacionn\Lab.Demo.Entities\bin\Debug\Newtonsoft.Json.xml
+C:\Users\54247\Desktop\Lab.Capas.Presentacionn\Lab.Demo.Entities\bin\Debug\Lab.Demo.Entities.dll.config
+C:\Users\54247\Desktop\Lab.Capas.Presentacionn\Lab.Demo.Entities\bin\Debug\Lab.Demo.Entities.dll
+C:\Users\54247\Desktop\Lab.Capas.Presentacionn\Lab.Demo.Entities\bin\Debug\Lab.Demo.Entities.pdb
+C:\Users\54247\Desktop\Lab.Capas.Presentacionn\Lab.Demo.Entities\bin\Debug\EntityFramework.dll
+C:\Users\54247\Desktop\Lab.Capas.Presentacionn\Lab.Demo.Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\54247\Desktop\Lab.Capas.Presentacionn\Lab.Demo.Entities\bin\Debug\Newtonsoft.Json.dll
+C:\Users\54247\Desktop\Lab.Capas.Presentacionn\Lab.Demo.Entities\bin\Debug\EntityFramework.xml
+C:\Users\54247\Desktop\Lab.Capas.Presentacionn\Lab.Demo.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\54247\Desktop\Lab.Capas.Presentacionn\Lab.Demo.Entities\bin\Debug\Newtonsoft.Json.xml
+C:\Users\54247\Desktop\Lab.Capas.Presentacionn\Lab.Demo.Entities\obj\Debug\Lab.Demo.Entities.csprojAssemblyReference.cache
+C:\Users\54247\Desktop\Lab.Capas.Presentacionn\Lab.Demo.Entities\obj\Debug\Lab.Demo.Entities.csproj.CoreCompileInputs.cache
+C:\Users\54247\Desktop\Lab.Capas.Presentacionn\Lab.Demo.Entities\obj\Debug\Lab.Demo.Entities.csproj.CopyComplete
+C:\Users\54247\Desktop\Lab.Capas.Presentacionn\Lab.Demo.Entities\obj\Debug\Lab.Demo.Entities.dll
+C:\Users\54247\Desktop\Lab.Capas.Presentacionn\Lab.Demo.Entities\obj\Debug\Lab.Demo.Entities.pdb
